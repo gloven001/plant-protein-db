@@ -25,10 +25,10 @@ try:
     # 根据搜索框的内容去数据库查数据
     if search_term:
         # ilike 表示模糊搜索，只要名字里包含你输入的字就能搜出来
-        response = supabase.table('plant_proteins').select("*").ilike('product_name', f'%{search_term}%').execute()
+        response = supabase.table('Protein_AA').select("*").ilike('product_name', f'%{search_term}%').execute()
     else:
         # 如果什么都没输入，就展示所有数据
-        response = supabase.table('plant_proteins').select("*").execute()
+        response = supabase.table('Prontein_AA').select("*").execute()
     
     # 将查到的数据展示出来
     if response.data:
